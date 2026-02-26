@@ -123,7 +123,7 @@ def collect_files_info(source_dir: str, output_file: str, verbose: bool = False)
         return False
 
 def get_user_input(prompt: str, validate_func=None) -> Optional[str]:
-    """Получает и валидирует пользовательский ввод."""
+    """Получает и валидирует пользовательский ввод."
     
     Args:
         prompt: Текст приглашения
