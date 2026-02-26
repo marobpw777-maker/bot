@@ -1,36 +1,35 @@
-# Parser.py Documentation
+# Парсер папок и файлов
 
-## Overview
-The `Parser.py` module is responsible for parsing input data and converting it into structured formats for further processing.
+## Обзор
+Этот скрипт рекурсивно обходит заданную директорию и собирает информацию о файлах, включая содержимое для читаемых файлов и размер. Результат сохраняется в текстовый файл для последующего анализа.
 
-## Functions
-- **parse_input(input_data)**: Parses the provided input data and returns a structured object.
+## Основные возможности
+- Игнорирование системных и бинарных файлов
+- Поддержка различных кодировок при чтении файлов
+- Опциональный подробный вывод о пропущенных файлах
+- Валидация входных путей и автоматическое создание выходной папки
 
-## Usage
-```python
-from Parser import parse_input
-
-input_data = "..."
-parsed_data = parse_input(input_data)
+## Запуск
+```bash
+python Parser.py
 ```
 
-## Parameters
-- **input_data**: A string or similar structure that contains the raw data to be parsed.
+Программа попросит указать:
+1. Путь к исходной папке для анализа
+2. Путь к папке для сохранения результата
+3. Имя итогового файла (например, `result.txt`)
 
-## Returns
-- Returns a structured object containing parsed data.
+## Примеры использования
+```
+📁 Введите путь к исходной папке: /home/user/documents
+📂 Введите путь к папке для сохранения результата: /home/user/output
+📄 Введите имя итогового файла (например, result.txt): анализ.txt
 
-## Examples
-```python
-# Sample Input
-input_data = "some raw data"
-
-# Parsing the input
-parsed_data = parse_input(input_data)
-
-# Output
-print(parsed_data)
+🔍 Показывать информацию о пропущенных файлах? (y/n): y
 ```
 
-## Notes
-- Be sure that the input data format is correct to avoid parsing errors.
+После выполнения в указанной папке появится файл с подробной информацией о найденных файлах.
+
+## Примечания
+- Скрипт предназначен для работы под Python 3.
+- В случае прерывания клавишей Ctrl+C программа корректно завершается.
